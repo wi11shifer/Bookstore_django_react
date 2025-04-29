@@ -1,0 +1,91 @@
+:local {
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modalContent {
+    background-color: var(--card-light);
+    padding: 24px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    color: var(--text-light);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark-theme .modalContent {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+  }
+
+  .modalContent h2 {
+    color: var(--text-light);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .dark-theme .modalContent h2 {
+    color: var(--text-dark);
+  }
+
+  @media (max-width: 480px) {
+    .modalContent {
+      max-width: 90%;
+      padding: 16px;
+    }
+  }
+
+  .input {
+    display: block;
+    margin-bottom: 12px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+  }
+
+  .input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus);
+  }
+
+  .dark-theme .input {
+    background-color: #555;
+    color: var(--text-dark);
+    border-color: #666;
+  }
+
+  .modalEnter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  .modalEnterActive {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  }
+
+  .modalExit {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .modalExitActive {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  }
+}
